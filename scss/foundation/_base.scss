@@ -1,0 +1,13 @@
+* {
+    font-family: "Montserrat";
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+    font-size: max(12px, 1.1vw);
+}
+
+main {
+    z-index: -2;
+}

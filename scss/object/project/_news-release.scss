@@ -1,0 +1,111 @@
+@use "../utility/inner";
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+
+.p-news-release {
+    position: relative;
+    z-index: 1;
+    margin-top: -2.1875rem;
+    @include mq(tb) {
+        margin-top: 0;
+    }
+
+    &__inner {
+        @extend %inner;
+        height: 4.375rem;
+        background-color: color(primary);
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        @include mq(tb) {
+            max-width: 100%;
+            width: 100%;
+            padding-block: 1rem;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    %font-heading-date {
+        color: color(white);
+        letter-spacing: 0.01em;
+    }
+
+    &__left-side {
+        display: flex;
+    }
+
+    &__heading {
+        @extend %font-heading-date;
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-left: 2.5rem;
+        margin-right: 1.5rem;
+        position: relative;
+        @include mq(tb) {
+            margin-inline: 0;
+            text-align: center;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0.0625rem;
+            height: 100%;
+            background-color: color(white);
+            top: 0;
+            right: -1.5rem;
+            @include mq(tb) {
+                display: block;
+            }
+        }
+    }
+
+    &__date {
+        @extend %font-heading-date;
+        margin-left: 1.5rem;
+        font-size: 1.25rem;
+        font-weight: bold;
+        position: relative;
+
+        @include mq(tb) {
+            padding-inline: 1rem;
+        }
+    }
+
+    &__descr {
+        color: color(white);
+        font-size: 1rem;
+        margin-left: 1rem;
+        flex: 1;
+        @include mq(tb) {
+            margin-top: 0.7rem;
+            margin-inline: auto;
+            padding-inline: 1rem;
+            font-size: 0.5rem;
+        }
+    }
+
+    .c-icon-rightarrow {
+        margin-left: 0.75rem;
+        margin-right: 2.5rem;
+        @include mq(tb) {
+            display: none;
+        }
+    }
+}
+
+.p-news-release:hover {
+    .p-news-release {
+        &__inner {
+            background-color: color(primary-hover);
+        }
+    }
+
+    .c-icon-rightarrow {
+        transform: translateX(1rem);
+    }
+}

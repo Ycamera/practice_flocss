@@ -1,0 +1,8 @@
+@use "../../foundation/variables" as *;
+
+%font-descr-m {
+    font-family: font(noto);
+    font-size: fontsize(descr-m);
+    line-height: 1.625rem;
+    color: color(black);
+}

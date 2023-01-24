@@ -1,0 +1,134 @@
+@use "../utility/inner";
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+@use "../utility/font";
+@use "../../javascript/js-trigger";
+
+.p-about-us {
+    padding-top: 8.75rem;
+    padding-bottom: 3.125rem;
+    overflow: hidden;
+    @include mq(tb) {
+        padding-top: 4.375rem;
+        padding-bottom: 5rem;
+    }
+
+    &__inner {
+        @extend %inner;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        @include mq(tb) {
+            flex-direction: column;
+        }
+    }
+
+    &__image {
+        width: 60%;
+        max-width: 34rem;
+        @include mq(tb) {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        position: relative;
+        max-width: 21.25rem;
+        padding-right: $m-s;
+        @include mq(tb) {
+            margin-top: 3rem;
+            padding-right: initial;
+        }
+
+        &::before {
+            content: "sugoi";
+            text-transform: uppercase;
+            position: absolute;
+            color: color(gray);
+            font-size: 12rem;
+            font-weight: bold;
+            top: -1rem;
+            left: calc(50% - 3.5rem);
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            @include mq(tb) {
+                left: 0;
+                font-size: 7rem;
+            }
+        }
+    }
+
+    &__heading {
+        font-size: fontsize(head-m);
+        opacity: 0;
+        @include mq(tb) {
+            text-align: center;
+        }
+    }
+
+    &__descr {
+        opacity: 0;
+        @extend %font-descr-m;
+        margin-top: 1.875rem;
+        margin-bottom: 3rem;
+    }
+    .c-btn--primary {
+        @include mq(tb) {
+            margin: auto;
+        }
+    }
+
+    &.is-hide {
+        .p-about-us {
+            &__image,
+            &__heading,
+            &__descr {
+                @extend %hide-el-below;
+            }
+            &__content {
+                &::before {
+                    opacity: 0;
+                    transform: translate(calc(-50% - 4rem), -50%);
+                }
+            }
+        }
+        .c-btn--primary {
+            @extend %hide-el-below;
+        }
+    }
+    &.is-show {
+        $delay: 0.3s;
+        %show-el {
+            animation: show 0.6s forwards;
+            animation-delay: $delay;
+            opacity: 0;
+            transform: translateY(3rem);
+        }
+        @keyframes show {
+            to {
+                opacity: 1;
+                transform: translateY(0, 0);
+            }
+        }
+        .p-about-us {
+            &__content {
+                &::before {
+                    opacity: 1;
+                    transition: 0.5s;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            &__image,
+            &__heading,
+            &__descr {
+                @extend %show-el;
+            }
+        }
+        .c-btn--primary {
+            @extend %show-el;
+            animation-delay: $delay + 0.1s;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.is-hide {
+    // opacity: 0;
+}
+
+.is-show {
+    opacity: 1;
+    transition: 0.3s;
+}
+
+%hide-el-below {
+    opacity: 0;
+    transform: translateY(3rem);
+}

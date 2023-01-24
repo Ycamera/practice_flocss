@@ -1,0 +1,8 @@
+@use "../../foundation/variables" as *;
+
+%inner {
+    position: relative;
+    width: $width;
+    max-width: $mxw-l;
+    margin: auto;
+}

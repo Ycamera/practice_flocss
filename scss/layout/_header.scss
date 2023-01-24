@@ -1,0 +1,147 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixins" as *;
+
+%line {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 8%;
+    background-color: color(bg-dark-gray);
+    border-radius: 0.1rem;
+    transition: 0.3s;
+}
+
+.l-header {
+    position: sticky;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    background: color(white);
+
+    .l-header__logo {
+        position: relative;
+        z-index: 3;
+        @include mq(tb) {
+            margin-left: 1rem;
+        }
+    }
+    &__nav {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        width: $width;
+        max-width: $mxw-l;
+        height: 4rem;
+        @include mq(tb) {
+            width: 100%;
+
+            &::before {
+                position: absolute;
+                content: "";
+                background-color: #fff;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+            }
+        }
+
+        &__btn {
+            z-index: 2;
+            display: none;
+            position: relative;
+            width: 3rem;
+            height: 3rem;
+            cursor: pointer;
+            margin-right: 1rem;
+
+            @include mq(tb) {
+                display: block;
+            }
+
+            &__line {
+                &--upper {
+                    @extend %line;
+                    transform: translate(-50%, calc(-50% - 0.6rem));
+                }
+                &--center {
+                    @extend %line;
+                }
+                &--bottom {
+                    @extend %line;
+                    transform: translate(-50%, calc(-50% + 0.6rem));
+                }
+            }
+            &.is-active {
+                .l-header__nav__btn__line {
+                    &--upper {
+                        transform: translate(-50%, -50%) rotate(45deg);
+                    }
+                    &--center {
+                        transform: translate(calc(-50% - 1rem), -50%);
+                        opacity: 0;
+                    }
+                    &--bottom {
+                        transform: translate(-50%, -50%) rotate(-45deg);
+                    }
+                }
+            }
+        }
+
+        &__items {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            column-gap: 3.375rem;
+            margin-left: auto;
+
+            @include mq(tb) {
+                position: absolute;
+                width: 100%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                // gap: 2rem;
+                // margin: auto;
+                padding-inline: 1rem;
+                padding-bottom: 1rem;
+                top: 4rem;
+                left: 50%;
+                transform: translate(-50%, 0);
+                z-index: 15;
+                background-color: color(white);
+                transition: clip-path 0.3s;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            }
+            &.is-active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+
+        &__item {
+            @include mq(tb) {
+                width: 100%;
+            }
+
+            a {
+                font-weight: 800;
+                font-size: 1.25rem;
+                transition: 0.2s;
+                @include mq(tb) {
+                    display: block;
+                    flex: 1;
+                    background-color: color(white);
+                    text-align: center;
+                    padding-block: 1rem;
+                }
+                &:hover {
+                    color: color(primary);
+                }
+            }
+        }
+    }
+}

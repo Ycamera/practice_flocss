@@ -1,0 +1,37 @@
+$colors: (
+    primary: #f27e1a,
+    white: #fff,
+    black: #222,
+    gray: #f4f4f4,
+    dark-gray: #b7b7b7,
+
+    bg-gray: #efefef,
+    bg-dark-gray: #292929,
+
+    primary-hover: #ffa252,
+);
+@function color($color-key) {
+    @return #{map-get($colors, $color-key)};
+}
+
+$fontsizes: (
+    head-m: 3.125rem,
+    head-s: 2.5rem,
+    descr-l: 1.25rem,
+    descr-m: 1rem,
+);
+@function fontsize($fontsize-key) {
+    @return #{map-get($fontsizes, $fontsize-key)};
+}
+
+$fonts: (
+    noto: "Noto Sans JP",
+);
+@function font($font-key) {
+    @return #{map-get($fonts, $font-key)};
+}
+
+$m-s: 1rem;
+
+$width: calc(100% - $m-s * 2);
+$mxw-l: 60rem;

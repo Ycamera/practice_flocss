@@ -1,0 +1,65 @@
+@use "../../foundation/variables" as *;
+@use "../../foundation/mixins" as *;
+@use "../utility/inner";
+
+.p-hero {
+    &__inner {
+        position: relative;
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        @include mq(sp) {
+            height: calc(100vh - 3rem);
+            object-fit: cover;
+            object-position: 40%;
+        }
+    }
+
+    &__headline {
+        position: absolute;
+        width: 100%;
+        max-width: $mxw-l;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
+        @include mq(sp) {
+            width: $width;
+            align-items: center;
+        }
+
+        &__inner {
+        }
+    }
+
+    %hero-color-font {
+        color: color(white);
+        font-weight: bold;
+        margin-right: $m-s;
+        @include mq(sp) {
+            margin-right: 0;
+        }
+    }
+
+    &__heading {
+        @extend %hero-color-font;
+        font-size: 4rem;
+        line-height: 5.375rem;
+        @include mq(sp) {
+            font-size: 3.5rem;
+        }
+    }
+
+    &__descr {
+        @extend %hero-color-font;
+        font-size: 1.25rem;
+        letter-spacing: 0.26em;
+        margin-top: 1rem;
+    }
+}

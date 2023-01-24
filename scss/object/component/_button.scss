@@ -1,0 +1,28 @@
+@use "../../foundation/variables" as *;
+
+.c-btn {
+    max-width: 15.375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: color(white);
+    padding-block: 1rem;
+    border-radius: 0.25rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.c-btn--primary {
+    @extend .c-btn;
+    background-color: color(primary);
+
+    &:hover {
+        background-color: color(primary-hover);
+    }
+}
+
+.c-icon {
+    &-rightarrow {
+        transition: 0.3s;
+    }
+}
