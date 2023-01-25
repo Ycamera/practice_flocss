@@ -1,5 +1,7 @@
 # flocss 設計の実装練習
 
+website URL = https://ycamera.github.io/practice_flocss/
+
 <h3>使用したデザインカンプ</h3>
 @akane様<br>
 配布元URL = https://note.com/oom2221/n/n682a40ca37f7
