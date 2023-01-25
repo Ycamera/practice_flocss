@@ -13,8 +13,7 @@
         @extend %inner;
     }
 
-    &__heading {
-        font-size: fontsize(head-m);
+    &__title {
         @include mq(tb) {
             text-align: center;
         }
@@ -127,7 +126,7 @@
             }
         }
 
-        &__heading {
+        &__title {
             position: absolute;
             font-size: fontsize(head-s);
             font-weight: bold;

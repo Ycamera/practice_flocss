@@ -37,8 +37,7 @@
         }
     }
 
-    &__heading {
-        font-size: fontsize(head-m);
+    &__title {
         text-align: center;
     }
 
@@ -57,7 +56,15 @@
         padding-bottom: 2.375rem;
         padding-inline: 1.875rem;
         // max-width: 18.75rem;
-        flex: 1 1 18.75rem;
+        flex: 0 1 18.75rem;
+
+        @include mq(tb) {
+            flex: 0 1 auto;
+            width: calc(50% - 1.875rem / 2);
+        }
+        @include mq(sp) {
+            width: 100%;
+        }
 
         &__image {
             height: 8.75rem;
@@ -65,14 +72,13 @@
             object-fit: contain;
         }
 
-        &__heading {
+        &__title {
             text-align: center;
             color: color(primary);
             margin-top: 2.625rem;
         }
 
         &__descr {
-            @extend %font-descr-m;
             margin-top: 1rem;
         }
     }
@@ -84,7 +90,7 @@
 
     &.is-hide {
         .p-service {
-            &__heading {
+            &__title {
                 @extend %hide-el-below;
             }
             &__card {
@@ -106,7 +112,7 @@
         $delay: 0.15s;
 
         .p-service {
-            &__heading {
+            &__title {
                 @extend %show-el;
             }
             @for $i from 1 through 3 {

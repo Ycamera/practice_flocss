@@ -28,7 +28,7 @@
         }
     }
 
-    %font-heading-date {
+    %font-title-date {
         color: color(white);
         letter-spacing: 0.01em;
     }
@@ -37,8 +37,8 @@
         display: flex;
     }
 
-    &__heading {
-        @extend %font-heading-date;
+    &__title {
+        @extend %font-title-date;
         font-size: 1.25rem;
         font-weight: bold;
         margin-left: 2.5rem;
@@ -65,7 +65,7 @@
     }
 
     &__date {
-        @extend %font-heading-date;
+        @extend %font-title-date;
         margin-left: 1.5rem;
         font-size: 1.25rem;
         font-weight: bold;
@@ -85,7 +85,7 @@
             margin-top: 0.7rem;
             margin-inline: auto;
             padding-inline: 1rem;
-            font-size: 0.5rem;
+            font-size: 0.7rem;
         }
     }
 

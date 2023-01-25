@@ -59,8 +59,7 @@
         }
     }
 
-    &__heading {
-        font-size: fontsize(head-m);
+    &__title {
         opacity: 0;
         @include mq(tb) {
             text-align: center;
@@ -69,7 +68,6 @@
 
     &__descr {
         opacity: 0;
-        @extend %font-descr-m;
         margin-top: 1.875rem;
         margin-bottom: 3rem;
     }
@@ -82,7 +80,7 @@
     &.is-hide {
         .p-about-us {
             &__image,
-            &__heading,
+            &__title,
             &__descr {
                 @extend %hide-el-below;
             }
@@ -121,7 +119,7 @@
             }
 
             &__image,
-            &__heading,
+            &__title,
             &__descr {
                 @extend %show-el;
             }

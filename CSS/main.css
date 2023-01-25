@@ -417,9 +417,20 @@ main {
   transition: 0.3s;
 }
 
-.p-service.is-hide .p-service__heading, .p-service .c-btn--primary, .p-message.is-hide .p-message__image, .p-message.is-hide .p-message__heading, .p-message.is-hide .p-message__descr, .p-message.is-hide .c-btn--primary, .p-about-us.is-hide .p-about-us__image, .p-about-us.is-hide .p-about-us__heading, .p-about-us.is-hide .p-about-us__descr, .p-about-us.is-hide .c-btn--primary {
+.p-service.is-hide .p-service__title, .p-service .c-btn--primary, .p-message.is-hide .p-message__image, .p-message.is-hide .p-message__title, .p-message.is-hide .p-message__descr, .p-message.is-hide .c-btn--primary, .p-about-us.is-hide .p-about-us__image, .p-about-us.is-hide .p-about-us__title, .p-about-us.is-hide .p-about-us__descr, .p-about-us.is-hide .c-btn--primary {
   opacity: 0;
   transform: translateY(3rem);
+}
+
+.c-title--m {
+  font-size: 3.125rem;
+}
+
+.c-text--m {
+  font-family: Noto Sans JP;
+  font-size: 1rem;
+  line-height: 1.625rem;
+  color: #222;
 }
 
 .c-btn, .c-btn--primary {
@@ -478,22 +489,22 @@ main {
     align-items: center;
   }
 }
-.p-hero .p-hero__descr, .p-hero .p-hero__heading {
+.p-hero .p-hero__descr, .p-hero .p-hero__title {
   color: #fff;
   font-weight: bold;
   margin-right: 1rem;
 }
 @media screen and (max-width: 575px) {
-  .p-hero .p-hero__descr, .p-hero .p-hero__heading {
+  .p-hero .p-hero__descr, .p-hero .p-hero__title {
     margin-right: 0;
   }
 }
-.p-hero__heading {
+.p-hero__title {
   font-size: 4rem;
   line-height: 5.375rem;
 }
 @media screen and (max-width: 575px) {
-  .p-hero__heading {
+  .p-hero__title {
     font-size: 3.5rem;
   }
 }
@@ -531,14 +542,14 @@ main {
     justify-content: center;
   }
 }
-.p-news-release .p-news-release__date, .p-news-release .p-news-release__heading {
+.p-news-release .p-news-release__date, .p-news-release .p-news-release__title {
   color: #fff;
   letter-spacing: 0.01em;
 }
 .p-news-release__left-side {
   display: flex;
 }
-.p-news-release__heading {
+.p-news-release__title {
   font-size: 1.25rem;
   font-weight: bold;
   margin-left: 2.5rem;
@@ -546,12 +557,12 @@ main {
   position: relative;
 }
 @media screen and (max-width: 767px) {
-  .p-news-release__heading {
+  .p-news-release__title {
     margin-inline: 0;
     text-align: center;
   }
 }
-.p-news-release__heading::after {
+.p-news-release__title::after {
   content: "";
   display: block;
   position: absolute;
@@ -562,7 +573,7 @@ main {
   right: -1.5rem;
 }
 @media screen and (max-width: 767px) {
-  .p-news-release__heading::after {
+  .p-news-release__title::after {
     display: block;
   }
 }
@@ -588,7 +599,7 @@ main {
     margin-top: 0.7rem;
     margin-inline: auto;
     padding-inline: 1rem;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
 }
 .p-news-release .c-icon-rightarrow {
@@ -606,13 +617,6 @@ main {
 }
 .p-news-release:hover .c-icon-rightarrow {
   transform: translateX(1rem);
-}
-
-.p-service__card__descr, .p-message__descr, .p-about-us__descr {
-  font-family: Noto Sans JP;
-  font-size: 1rem;
-  line-height: 1.625rem;
-  color: #222;
 }
 
 .p-about-us {
@@ -675,12 +679,11 @@ main {
     font-size: 7rem;
   }
 }
-.p-about-us__heading {
-  font-size: 3.125rem;
+.p-about-us__title {
   opacity: 0;
 }
 @media screen and (max-width: 767px) {
-  .p-about-us__heading {
+  .p-about-us__title {
     text-align: center;
   }
 }
@@ -698,7 +701,7 @@ main {
   opacity: 0;
   transform: translate(calc(-50% - 4rem), -50%);
 }
-.p-about-us.is-show .c-btn--primary, .p-about-us.is-show .p-about-us__image, .p-about-us.is-show .p-about-us__heading, .p-about-us.is-show .p-about-us__descr {
+.p-about-us.is-show .c-btn--primary, .p-about-us.is-show .p-about-us__image, .p-about-us.is-show .p-about-us__title, .p-about-us.is-show .p-about-us__descr {
   animation: show 0.6s forwards;
   animation-delay: 0.3s;
   opacity: 0;
@@ -778,15 +781,13 @@ main {
     font-size: 7rem;
   }
 }
-.p-message__heading {
-  font-size: 3.125rem;
-}
 @media screen and (max-width: 767px) {
-  .p-message__heading {
+  .p-message__title {
     text-align: center;
   }
 }
 .p-message__descr {
+  opacity: 0;
   margin-top: 1.875rem;
   margin-bottom: 3rem;
 }
@@ -799,7 +800,7 @@ main {
   opacity: 0;
   transform: translate(calc(-50% + 4rem), -50%);
 }
-.p-message.is-show .c-btn--primary, .p-message.is-show .p-message__image, .p-message.is-show .p-message__heading, .p-message.is-show .p-message__descr {
+.p-message.is-show .c-btn--primary, .p-message.is-show .p-message__image, .p-message.is-show .p-message__title, .p-message.is-show .p-message__descr {
   animation: show 0.6s forwards;
   animation-delay: 0.3s;
   transform: translateY(3rem);
@@ -848,8 +849,7 @@ main {
   transform: translateX(-50%);
   bottom: -35%;
 }
-.p-service__heading {
-  font-size: 3.125rem;
+.p-service__title {
   text-align: center;
 }
 .p-service__cards {
@@ -864,14 +864,25 @@ main {
   padding-top: 2rem;
   padding-bottom: 2.375rem;
   padding-inline: 1.875rem;
-  flex: 1 1 18.75rem;
+  flex: 0 1 18.75rem;
+}
+@media screen and (max-width: 767px) {
+  .p-service__card {
+    flex: 0 1 auto;
+    width: calc(50% - 0.9375rem);
+  }
+}
+@media screen and (max-width: 575px) {
+  .p-service__card {
+    width: 100%;
+  }
 }
 .p-service__card__image {
   height: 8.75rem;
   margin: auto;
   object-fit: contain;
 }
-.p-service__card__heading {
+.p-service__card__title {
   text-align: center;
   color: #f27e1a;
   margin-top: 2.625rem;
@@ -887,7 +898,7 @@ main {
   opacity: 0;
   transform: translateX(3rem);
 }
-.p-service.is-show .p-service__card:nth-child(3), .p-service.is-show .p-service__card:nth-child(2), .p-service.is-show .p-service__card:nth-child(1), .p-service.is-show .p-service__heading {
+.p-service.is-show .p-service__card:nth-child(3), .p-service.is-show .p-service__card:nth-child(2), .p-service.is-show .p-service__card:nth-child(1), .p-service.is-show .p-service__title {
   opacity: 1;
   transition: 0.5s;
   transform: translate(0, 0);
@@ -923,11 +934,8 @@ main {
     padding-block: 5rem;
   }
 }
-.p-news__heading {
-  font-size: 3.125rem;
-}
 @media screen and (max-width: 767px) {
-  .p-news__heading {
+  .p-news__title {
     text-align: center;
   }
 }
@@ -1025,7 +1033,7 @@ main {
     max-width: 34rem;
   }
 }
-.p-news__info__heading {
+.p-news__info__title {
   position: absolute;
   font-size: 2.5rem;
   font-weight: bold;
