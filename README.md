@@ -1,7 +1,7 @@
 # flocss 設計の実装練習
 
 <h3>使用したデザインカンプ</h3>
-@akane様
+@akane様<br>
 配布元URL = https://note.com/oom2221/n/n682a40ca37f7
 
 <h3>ディレクトリ構造</h3>
